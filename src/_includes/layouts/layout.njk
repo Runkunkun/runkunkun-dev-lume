@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My first page</title>
+  {% block css %}
+<link rel="stylesheet" href="styles/style.css" />
+{% endblock %}
+</head>
+<body>
+  {{ comp.navbar() | safe}}
+  {{ content | safe }}
+</body>
+</html>
