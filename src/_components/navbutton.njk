@@ -1,0 +1,4 @@
+{% set active = true if link == url %}
+<a href={{link}} class="text-slate-100 font-bold text-base {% if active %}border-b-2 border-slate-500{% endif %}" >
+    {{text}}
+</a>

@@ -1,8 +1,30 @@
 ---
 layout: layouts/layout.njk
-title: Homepage
+title: Lukas Kurth
 ---
-<h1>Welcome to my website</h1>
-<p>This is my first page using <strong>Lume,</strong>
-a static site generator for Deno.</p>
-<p>I hope you enjoy it.</p>
+<div class="flex flex-col items-start justify-center w-full space-y-10">
+    <div class="flex flex-row items-center justify-center w-full">
+        <div class="flex flex-row items-center justify-start w-1/2">
+            <div class="flex flex-col items-start justify-center space-y-4 w-full">
+                <p class="sm:text-6xl text-4xl text-emerald-500">DevOps</p>
+                <p class="sm:text-6xl text-4xl text-teal-500">Photography</p>
+                <p class="sm:text-6xl text-4xl text-cyan-500">FullStack WebDev</p>
+            </div>
+        </div>
+        <div class="flex flex-row items-center justify-end w-1/2">
+            <image src="/img/lukas.png" class="h-full"/>
+        </div>
+    </div>
+    <div class="flex xl:flex-row flex-col xl:items-center items-start justify-center w-full xl:space-x-5 xl:space-y-0 space-y-5">
+        <div class="flex flex-row items-center justify-center space-x-5 md:text-base text-xs"><image src="/assets/linkedin.svg" class="md:w-12 w-8"/><a href="https://de.pnkedin.com/in/lukas-kurth-55b161207" target="blank">Lukas Kurth</a></div>
+        <div class="flex flex-row items-center justify-center space-x-5 md:text-base text-xs"><image src="/assets/github.svg" class="md:w-12 w-8"/><a href="https://github.com/Runkunkun" target="blank">Runkunkun</a></div>
+        <div class="flex flex-row items-center justify-center space-x-5 md:text-base text-xs"><image src="/assets/instagram.svg" class="md:w-12 w-8"/><a href="https://www.instagram.com/runkunkun/" target="blank">@runkunkun</a><a href="https://www.instagram.com/ruenigraphy/" target="blank">@ruenigraphy</a><a href="https://www.instagram.com/ruenisects/" target="blank">@ruenisects</a></div>
+    </div>
+    <div class="flex flex-col items-start justify-center w-full space-y-5">
+        <p class="text-4xl">Workexperience</p>
+        {{comp.joblisting({picture: "/img/adconova.jpg", workplace: "Adconova GmbH", job: "Cloud Developer", start: "02.2023", end: "now", duration: ""}) | safe}}
+        {{comp.joblisting({picture: "/img/syngenio.jpg", workplace: "Syngenio AG", job: "IT-Consultant", start: "11.2021", end: "02.2023",  duration: "1 Years 4 Months"}) | safe}}
+        {{comp.joblisting({picture: "/img/syngenio.jpg", workplace: "Syngenio AG", job: "Junior IT-Consultant", start: "09.2020", end: "11.2021",  duration: "1 Years 3 Months"}) | safe}}
+        {{comp.joblisting({picture: "/img/ihf.png", workplace: "IHF RWTH Aachen", job: "Mathematical Technical Software Developer", start: "09.2017", end: "08.2020",  duration: "3 Years"}) | safe}}
+    </div>
+</div>

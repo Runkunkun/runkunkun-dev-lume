@@ -1,14 +1,23 @@
+{% set active = true if url == '/impressum/' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My first page</title>
+  <title>{{title}}</title>
+  <link rel="icon" type="image/x-icon" href="/assets/runkunkun_logo.svg">
   {% block css %}
-<link rel="stylesheet" href="styles/style.css" />
+<link rel="stylesheet" href="/styles/style.css" />
 {% endblock %}
 </head>
-<body>
-  {{ comp.navbar() | safe}}
+<body class="h-screen bg-slate-800">
+  {{ comp.navbar({url: url}) | safe}}
+  <div class="flex flex-row items-center justify-center bg-slate-800 w-screens h-full text-slate-100">
+  <div class="flex flex-row items-center justify-center md:w-7/12 sm:w-9/12 w-11/12 mt-10 mb-10">
   {{ content | safe }}
+  </div>
+  </div>
 </body>
+<footer class="flex flex-row items-center justify-center bg-slate-900 w-screen text-slate-100">
+  <a href="/impressum" class="{% if active %}border-b-2 border-slate-500{% endif %}">Impressum</a>
+</footer>
 </html>
