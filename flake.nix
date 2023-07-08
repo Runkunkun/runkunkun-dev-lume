@@ -24,7 +24,6 @@
           deno
         ];
         shellHook = ''
-          ${pkgs.deno}/bin/deno run -Ar https://deno.land/x/lume/init.ts
           ${pkgs.deno}/bin/deno install --allow-run --name lume --force --reload https://deno.land/x/lume_cli/mod.ts
         '';
       };
